@@ -1,7 +1,7 @@
-const base = "";
+import { apiUrl } from "./apiBase.js";
 
 export async function fetchJson(path) {
-  const res = await fetch(`${base}${path}`);
+  const res = await fetch(apiUrl(path));
   if (!res.ok) throw new Error(await res.text());
   return res.json();
 }
@@ -20,7 +20,7 @@ export function getArticle(slug) {
 }
 
 export function subscribe(email) {
-  return fetch("/api/subscribe", {
+  return fetch(apiUrl("/api/subscribe"), {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email }),

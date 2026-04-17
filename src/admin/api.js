@@ -1,3 +1,5 @@
+import { apiUrl } from "../apiBase.js";
+
 const TOKEN_KEY = "cb_admin_token";
 
 export function getToken() {
@@ -19,7 +21,7 @@ export async function adminFetch(path, opts = {}) {
     ...(opts.headers || {}),
     ...(token ? { Authorization: `Bearer ${token}` } : {}),
   };
-  const res = await fetch(`/api/admin${path}`, { ...opts, headers });
+  const res = await fetch(apiUrl(`/api/admin${path}`), { ...opts, headers });
   const data = await res.json().catch(() => ({}));
   if (res.status === 401) {
     clearToken();
@@ -34,14 +36,14 @@ export async function adminFetch(path, opts = {}) {
 export async function adminLogin(password) {
   let res;
   try {
-    res = await fetch("/api/admin/login", {
+    res = await fetch(apiUrl("/api/admin/login"), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ password }),
     });
   } catch {
     throw new Error(
-      "Cannot reach the API. Restart npm run dev and check the server line “API listening…”. Dev uses port 3041 (see client/.env.development). Password: admin."
+      "Cannot reach the API. Restart npm run dev and check the server line “API listening…”. Dev uses port 3041 (see blogfront/.env.development). Password: admin."
     );
   }
   const data = await res.json().catch(() => ({}));

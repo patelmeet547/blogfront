@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { adminFetch, getToken } from "./api.js";
+import { apiUrl } from "../apiBase.js";
 import { useAdminData } from "./AdminContext.jsx";
 
 const empty = {
@@ -64,7 +65,7 @@ export default function AdminArticleEdit() {
     const fd = new FormData();
     fd.append("file", file);
     try {
-      const res = await fetch("/api/admin/upload", {
+      const res = await fetch(apiUrl("/api/admin/upload"), {
         method: "POST",
         headers: token ? { Authorization: `Bearer ${token}` } : {},
         body: fd,

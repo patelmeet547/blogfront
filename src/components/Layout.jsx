@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
+import { apiUrl } from "../apiBase.js";
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 import CookieBanner from "./CookieBanner.jsx";
@@ -13,7 +14,7 @@ function PageViewTracker() {
       if (cancelled) return;
       const path = `${location.pathname}${location.search}`;
       if (path.startsWith("/admin")) return;
-      fetch("/api/analytics/pageview", {
+      fetch(apiUrl("/api/analytics/pageview"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ path }),
