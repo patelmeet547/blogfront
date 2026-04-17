@@ -1,0 +1,28 @@
+.articles-page {
+  padding: 2.5rem 0 3rem;
+}
+
+.articles-page__header {
+  margin-bottom: 2rem;
+}
+
+.articles-page__search input {
+  margin-top: 1rem;
+  width: min(100%, 320px);
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text);
+}
+
+.articles-page__search input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.articles-page__err,
+.articles-page__loading,
+.articles-page__empty {
+  color: var(--text-muted);
+}

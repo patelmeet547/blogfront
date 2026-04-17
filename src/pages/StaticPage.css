@@ -1,0 +1,33 @@
+.static-page {
+  padding: 2.5rem 0 3.5rem;
+  max-width: 640px;
+}
+
+.static-page--center {
+  text-align: center;
+  max-width: none;
+}
+
+.static-page__prose {
+  font-family: var(--font-serif);
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.static-page__prose p {
+  margin: 0 0 1rem;
+}
+
+.static-page__prose ul {
+  margin: 0 0 1rem 1.25rem;
+  padding: 0;
+}
+
+.static-page__prose a {
+  color: var(--accent);
+}
+
+.static-page--center .static-page__prose {
+  margin-bottom: 1rem;
+}

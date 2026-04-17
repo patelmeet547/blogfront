@@ -1,0 +1,124 @@
+.site-footer {
+  margin-top: 4rem;
+  border-top: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--bg) 0%, #0a0908 100%);
+}
+
+.site-footer__grid {
+  display: grid;
+  gap: 2.5rem;
+  padding: 3rem 0;
+}
+
+@media (min-width: 768px) {
+  .site-footer__grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.site-footer__title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.75rem;
+  font-weight: 400;
+}
+
+.site-footer__lede {
+  color: var(--text-muted);
+  margin: 0 0 1rem;
+  max-width: 36ch;
+}
+
+.subscribe-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.subscribe-form input {
+  flex: 1 1 200px;
+  min-width: 0;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text);
+}
+
+.subscribe-form input::placeholder {
+  color: var(--text-muted);
+}
+
+.subscribe-form input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.subscribe-form__msg {
+  margin: 0.75rem 0 0;
+  font-size: 0.9rem;
+}
+
+.subscribe-form__msg--ok {
+  color: #8fd694;
+}
+
+.subscribe-form__msg--err {
+  color: #f0a8a8;
+}
+
+.site-footer__kicker {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.5rem;
+  font-weight: 400;
+}
+
+.site-footer__org {
+  margin: 0 0 1rem;
+  color: var(--text-muted);
+}
+
+.site-footer__address {
+  font-style: normal;
+  color: var(--text-muted);
+  margin: 0 0 1rem;
+  line-height: 1.6;
+}
+
+.site-footer__ein {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0 0 1.25rem;
+}
+
+.site-footer__contact {
+  margin: 0 0 1rem;
+  color: var(--text-muted);
+}
+
+.site-footer__contact a {
+  color: var(--text);
+}
+
+.site-footer__about {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.site-footer__bottom {
+  border-top: 1px solid var(--border);
+  padding: 1rem 0;
+}
+
+.site-footer__bottom-inner {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.site-footer__bottom-inner a {
+  color: var(--accent);
+}
